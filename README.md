@@ -20,7 +20,7 @@ This module extends the μ(τ)-regulated imaginary time evolution to 3D grids us
 
 Run:
 ```bash
-python solver_3D.py
+python3 solver_3D.py
 
 ## Usage
 ```bash
