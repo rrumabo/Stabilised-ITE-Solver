@@ -1,27 +1,19 @@
 # μ-Stabilized ITE Solver
 
-This repository implements an adaptive imaginary-time evolution (ITE) solver for the nonlinear Schrödinger equation. The method dynamically adjusts a feedback parameter μ(τ) to maintain wavefunction normalization and improve convergence toward soliton solutions.
+This repository implements a norm-stabilized imaginary-time evolution (ITE) solver for the 1D nonlinear Schrödinger equation (NLSE), using an adaptive feedback term μ(τ). The goal is to reach ground-state solitons (e.g. sech(x)) without requiring explicit renormalization at each step.
 
-## Features
-- Norm-preserving ITE via log-derivative μ(τ)
-- RK4 evolution with optional damping
-- Parameter sweeps over (g, α)
-- Heatmaps of L² error, norm drift, μ variability
-- Final ψ vs analytical sech(x) comparison
-- Full LaTeX paper included
+## 🔍 Features
 
-### 🧠 3D μ-Stabilized ITE Extension
+- RK4 evolution with adaptive feedback control
+- Stabilized norm without post-step normalization
+- α-parameter sweeps to explore convergence dynamics
+- L² error computation vs sech(x)
+- Baseline ITE (no µ) comparison
+- Exported plots to `figures/` folder
+- Clean, modular `src/` structure and Jupyter notebook
 
-This module extends the μ(τ)-regulated imaginary time evolution to 3D grids using spectral methods.
+---
 
-- Preserves norm across 3D domains
-- Allows projection and slice visualization
-- Ready for external potentials and parametre sweeps
+## Notebook
 
-Run:
-```bash
-python3 solver_3D.py
-
-## Usage
-```bash
-python main.py
+All results, comparisons, and plots are reproducible in: notebooks/demo_1D.ipynb
